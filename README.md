@@ -1,6 +1,7 @@
-# vue_todolist
+# Todolist
 
 A todo list app made with VueJS and Electron.
+
 
 ![alt text](https://i.imgur.com/AE5wjta.png)
 
