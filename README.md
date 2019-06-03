@@ -2,6 +2,7 @@
 
 A todo list app made with VueJS and Electron.
 
-Feel free to try it at https://quizzical-spence-da1bea.netlify.com (without database and currently mobile only).
+![alt text](https://imgur.com/AE5wjta)
+currently mobile only).
 
 Back-end made with NodeJs and MongoDB.
