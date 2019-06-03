@@ -1,11 +1,18 @@
 <template>
-  <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
+  <!-- <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
     <p>
       <input type="checkbox" v-on:change="markComplete">
       {{todo.message}}
       <button @click="$emit('del-todo', todo._id)" class="del">x</button>
     </p>
-  </div>
+  </div>-->
+  <ion-item>
+    <ion-toggle class="ion-padding-end" @ionChange="markComplete"></ion-toggle>
+    <ion-label>
+      <h2 v-bind:class="{'is-complete':todo.completed}">{{todo.message}}</h2>
+    </ion-label>
+    <ion-button color="danger" size="small" @click="$emit('del-todo', todo._id)">X</ion-button>
+  </ion-item>
 </template>
 
 <script>

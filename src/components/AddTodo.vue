@@ -8,7 +8,7 @@
   <div>
     <form @submit="addTodo">
       <ion-item class="ion-padding-bottom">
-        <ion-label>Todo:</ion-label>
+        <ion-label class="ion-padding-end">Todo:</ion-label>
         <ion-input
           type="text"
           placeholder="Add Todo..."
