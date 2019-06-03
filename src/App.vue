@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <Header/>
-    <router-view/>
+    <ion-app>
+      <ion-vue-router/>
+    </ion-app>
   </div>
 </template>
 
@@ -14,9 +15,8 @@ export default {
     Header
   },
   data() {
-    return {
-    };
-  },
+    return {};
+  }
 };
 </script>
 

@@ -1,8 +1,22 @@
 <template>
-  <div>
+  <!--   <div>
     <form @submit="addTodo">
       <input type="text" v-model="title" name="title" placeholder="Add Todo...">
       <input type="submit" value="Submit" class="btn">
+    </form>
+  </div>-->
+  <div>
+    <form @submit="addTodo">
+      <ion-item class="ion-padding-bottom">
+        <ion-label>Todo:</ion-label>
+        <ion-input
+          type="text"
+          placeholder="Add Todo..."
+          :value="title"
+          @ionInput="title = $event.target.value"
+        ></ion-input>
+      </ion-item>
+      <ion-button expand="block" type="submit">Submit</ion-button>
     </form>
   </div>
 </template>

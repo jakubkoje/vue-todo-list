@@ -1,20 +1,25 @@
 <template>
-  <div id="app">
-    <AddTodo v-on:add-todo="addTodo"/>
-    <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
+  <div class="ion-page">
+    <Header/>
+    <ion-content class="ion-padding">
+      <AddTodo v-on:add-todo="addTodo"/>
+      <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
+    </ion-content>
   </div>
 </template>
 
 <script>
 import Todos from "../components/Todos";
 import AddTodo from "../components/AddTodo";
+import Header from "../components/Layout/Header";
 import axios from "axios";
 
 export default {
   name: "Home",
   components: {
     Todos,
-    AddTodo
+    AddTodo,
+    Header
   },
   data() {
     return {
