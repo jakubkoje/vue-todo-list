@@ -3,7 +3,7 @@
     <Header/>
     <ion-content class="ion-padding">
       <AddTodo v-on:add-todo="addTodo"/>
-      <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo"/>
+      <Todos v-bind:todos="todos" v-on:del-todo="deleteTodo" v-on:toggle-todo="toggleTodo"/>
     </ion-content>
   </div>
 </template>
@@ -34,16 +34,19 @@ export default {
         .catch(err => alert(err));
     },
     addTodo(newTodo) {
-      const { title, completed } = newTodo;
+      const { title } = newTodo;
       axios
         .post("http://localhost:3000/add-todo", {
           title
         })
         .then(res => (this.todos = [...this.todos, res.data]))
         .catch(err => alert(err));
-      console.log(this.todos);
     },
-    toggleTodo(toggledTodo) {}
+    toggleTodo(id) {
+      axios
+        .put(`http://localhost:3000/toggle-todo/${id}`)
+        .catch(err => alert(err));
+    }
   },
   created() {
     axios

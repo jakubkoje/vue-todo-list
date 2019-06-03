@@ -8,7 +8,7 @@
   </header>-->
   <ion-header>
     <ion-toolbar>
-      <ion-title>Weather</ion-title>
+      <ion-title>Todo List</ion-title>
     </ion-toolbar>
   </ion-header>
 </template>

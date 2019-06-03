@@ -7,7 +7,8 @@
     </p>
   </div>-->
   <ion-item>
-    <ion-toggle class="ion-padding-end" @ionChange="markComplete"></ion-toggle>
+    <ion-toggle checked v-if="todo.completed" class="ion-padding-end" @ionChange="markComplete"></ion-toggle>
+    <ion-toggle v-else class="ion-padding-end" @ionChange="markComplete"></ion-toggle>
     <ion-label>
       <h2 v-bind:class="{'is-complete':todo.completed}">{{todo.message}}</h2>
     </ion-label>
@@ -22,6 +23,7 @@ export default {
   methods: {
     markComplete() {
       this.todo.completed = !this.todo.completed;
+      this.$emit("toggle-todo", this.todo._id);
     }
   }
 };
