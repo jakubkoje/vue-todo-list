@@ -1,7 +1,10 @@
-# vue_todolist
+# Todolist
 
-A todo list app made with VueJS.
+A todo list app made with VueJS and Electron.
 
-Feel free to try it at https://quizzical-spence-da1bea.netlify.com (without database)
+
+![alt text](https://i.imgur.com/AE5wjta.png)
+
+Currently mobile only.
 
 Back-end made with NodeJs and MongoDB.
