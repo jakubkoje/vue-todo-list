@@ -7,7 +7,7 @@
   </div>-->
   <div>
     <form @submit="addTodo">
-      <ion-item class="ion-padding-bottom">
+      <ion-item>
         <ion-label class="ion-padding-end">Todo:</ion-label>
         <ion-input
           type="text"
@@ -16,7 +16,7 @@
           @ionInput="title = $event.target.value"
         ></ion-input>
       </ion-item>
-      <ion-button expand="block" type="submit">Submit</ion-button>
+      <ion-button expand="block" type="submit" class="ion-margin-top ion-margin-bottom">Submit</ion-button>
     </form>
   </div>
 </template>
@@ -45,15 +45,4 @@ export default {
 </script>
 
 <style scoped>
-form {
-  display: flex;
-}
-input[type="text"] {
-  flex: 10;
-  padding: 5px;
-}
-
-input[type="submit"] {
-  flex: 2;
-}
 </style>

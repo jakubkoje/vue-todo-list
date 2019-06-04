@@ -9,6 +9,14 @@
   <ion-header>
     <ion-toolbar>
       <ion-title>Todo List</ion-title>
+      <ion-buttons slot="primary">
+        <ion-button>
+          <ion-icon name="information-circle-outline"></ion-icon>
+        </ion-button>
+        <ion-button>
+          <ion-icon name="home"></ion-icon>
+        </ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
 </template>
