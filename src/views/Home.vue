@@ -36,7 +36,7 @@ export default {
     addTodo(newTodo) {
       const { title } = newTodo;
       axios
-        .post("http://localhost:3000/add-todo", {
+        .post("https://todo-list-api-jakubkoje.herokuapp.com/add-todo", {
           title
         })
         .then(res => (this.todos = [...this.todos, res.data]))
@@ -44,13 +44,13 @@ export default {
     },
     toggleTodo(id) {
       axios
-        .put(`http://localhost:3000/toggle-todo/${id}`)
+        .put(`https://todo-list-api-jakubkoje.herokuapp.com/toggle-todo/${id}`)
         .catch(err => alert(err));
     }
   },
   created() {
     axios
-      .get("http://localhost:3000/get-todos")
+      .get("https://todo-list-api-jakubkoje.herokuapp.com/get-todos")
       .then(res => (this.todos = res.data))
       .catch(err => alert(err));
   }
