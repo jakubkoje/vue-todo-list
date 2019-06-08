@@ -29,9 +29,9 @@ export default {
   methods: {
     deleteTodo(id) {
       axios
-        .delete(`http://localhost:3000/del-todo/${id}`)
+        .delete(`https://todo-list-api-jakubkoje.herokuapp.com/del-todo/${id}`)
         .then(() => (this.todos = this.todos.filter(todo => todo._id !== id)))
-        .catch(err => alert(err));
+        .catch(() => this.showAlert("Request failed", "Failed to remove todo"));
     },
     addTodo(newTodo) {
       const { title } = newTodo;
@@ -40,19 +40,33 @@ export default {
           title
         })
         .then(res => (this.todos = [...this.todos, res.data]))
-        .catch(err => alert(err));
+        .catch(() =>
+          this.showAlert(
+            "Request failed",
+            "Please add todo with length from 4 to 20 symbols"
+          )
+        );
     },
     toggleTodo(id) {
       axios
         .put(`https://todo-list-api-jakubkoje.herokuapp.com/toggle-todo/${id}`)
-        .catch(err => alert(err));
+        .catch(() => this.showAlert("Request failed", "Failed to toggle todo"));
+    },
+    showAlert(header, message) {
+      return this.$ionic.alertController
+        .create({
+          header,
+          message,
+          buttons: ["OK"]
+        })
+        .then(a => a.present());
     }
   },
   created() {
     axios
       .get("https://todo-list-api-jakubkoje.herokuapp.com/get-todos")
       .then(res => (this.todos = res.data))
-      .catch(err => alert(err));
+      .catch(() => this.showAlert("Request failed", "Failed to get todos"));
   }
 };
 </script>
