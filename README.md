@@ -3,7 +3,7 @@
 A todo list app made with VueJS and Electron.
 
 
-![alt text](https://i.imgur.com/AE5wjta.png)
+![alt text](https://imgur.com/PCf2PMe.png)
 
 Currently mobile only.
 
